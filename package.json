@@ -1,0 +1,27 @@
+{
+  "name": "react-adopt-me",
+  "version": "1.0.0",
+  "description": "Learning React with Frontend Masters - Complete Intro to React v5, by developing a pet adoption project",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msaadm/react-adopt-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msaadm/react-adopt-me/issues"
+  },
+  "homepage": "https://github.com/msaadm/react-adopt-me#readme",
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.2.1"
+  }
+}
