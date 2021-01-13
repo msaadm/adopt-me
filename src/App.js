@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { Router, Link } from "@reach/router"
 import SearchParams from "./SearchParams"
-import Details from "./details";
+import DetailsWithErrorBoundary from "./details";
 
 const App = () => {
 
@@ -14,7 +14,7 @@ const App = () => {
         </header>
         <Router>
           <SearchParams path="/" />
-          <Details path="/details/:id" />
+          <DetailsWithErrorBoundary path="/details/:id" />
         </Router>
       </div>
     </React.StrictMode>
