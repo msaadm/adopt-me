@@ -2,6 +2,7 @@ import React from 'react'
 import pet from '@frontendmasters/pet'
 import Carousel from './Carousel'
 import ErrorBoundary from './ErrorBoundary';
+import ThemeContext from './ThemeContext';
 
 // const Details = (props) => {
 //     return (
@@ -38,12 +39,12 @@ class Details extends React.Component{
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/" noThrow />;
+          }
         if(this.state.loading){
             return <h1>loading...</h1>
         } 
-        if (typeof this.state.animal == 'undefined') {
-            throw new Error('Not Found')
-        };
 
         const { animal, breed, location, description, name, media } = this.state
         
@@ -53,7 +54,14 @@ class Details extends React.Component{
                 <div>
                     <h1>{name}</h1>
                     <h2>{`${animal} - ${breed} - ${location}`}</h2>
-                    <button type="button">Adopt {name}</button>
+                    <ThemeContext.Consumer>
+                        {
+                            ([theme]) => (
+                                <button style={{ backgroundColor: theme}} type="button">Adopt {name}</button>
+                            )
+                        }
+                    </ThemeContext.Consumer>
+                    
                     <p>{description}</p>
                 </div>
             </div>
